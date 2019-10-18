@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/line/index",
+    "pages/deviceInfo/deviceInfo",
+    "pages/login/login",
+    "pages/device/device",
+    "pages/map/map",
+    "pages/pie/index",
+    "pages/me/me",
+    
+    
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "components/select/select",
+    
+    "pages/about-us/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "物联网平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bac7e0",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#f7f7f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/device/device",
+        "text": "设备",
+        "iconPath": "public/img/tabbar/device.png",
+        "selectedIconPath": "public/img/tabbar/device_selected_.png"
+      },
+      {
+        "pagePath": "pages/line/index",
+        "text": "报表",
+        "iconPath": "public/img/tabbar/report.png",
+        "selectedIconPath": "public/img/tabbar/report_selected_.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "public/img/tabbar/me.png",
+        "selectedIconPath": "public/img/tabbar/me_selected_.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxba8c53ccdb9bd651"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "上海"
+    }
+  }
+}
