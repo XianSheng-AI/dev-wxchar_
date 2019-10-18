@@ -1,0 +1,11 @@
+/* pages/about-us/index.wxss */
+.about-title{
+  text-align: center;
+  padding: 20rpx 0 30rpx;
+}
+.about-desc{
+  text-indent: 60rpx;
+  padding:0 60rpx;
+  line-height: 60rpx;
+}
+

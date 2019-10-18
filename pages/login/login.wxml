@@ -1,0 +1,27 @@
+<!-- 登录 -->
+<view class='appName'>物联网平台</view>
+
+<view class='input-wrapper'>
+  <form>
+    <view class='input-item'>
+      <image class='img_icon' src='../../public/img/login/account_icon.png'></image>
+      <input value='' type='text' bindinput='userName' name="userName" class='info_input' placeholder='请输入账号'></input>
+    </view>
+    <view class='input-item'>
+      <image class='img_icon' src='../../public/img/login/password_icon.png'></image>
+      <input name="password" bindinput='password' class='info_input' type='password' placeholder='请输入密码'></input>
+    </view>
+  </form>
+</view>
+
+<button class='login_btn' bindtap='login' form-type='submit'>立即登录</button>
+
+
+
+
+
+
+
+
+
+

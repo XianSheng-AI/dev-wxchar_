@@ -1,0 +1,5 @@
+<!--pages/treeDemo/demo.wxml-->
+<text>pages/treeDemo/demo.wxml</text>
+<view class='treeShow'>
+  <mytree model='{{ treeData }}' bind:tapitem='tapItem'></mytree>
+</view>

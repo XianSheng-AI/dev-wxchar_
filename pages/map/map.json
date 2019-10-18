@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Select": "/components/select/select",
+    "mytree": "../../components/mytree/mytree"
+  }
+  
+}

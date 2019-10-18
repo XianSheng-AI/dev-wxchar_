@@ -1,0 +1,578 @@
+.markInfo{
+  display: none;
+}
+.markInfo.showMarkInfo{
+  display: block;
+}
+.hideInfo{
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: -20rpx;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s
+}
+.hideInfo.showHideInfo{
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  
+}
+
+
+.hideInfo .device-info{
+  opacity: 1;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background:  #70D50B;
+  font-size: 24rpx;  
+}
+.hideInfo .device-info::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.hideInfo .info-item{
+  float: left;
+  width: 50%;
+  color: #fff;
+  margin-top: 18rpx;
+}
+
+.hideInfo .info-item.long{
+  width: 100%;
+}
+
+.hideInfo .work-info{
+  width: 100%;
+  padding: 15rpx 40rpx;
+  box-sizing: border-box;
+  font-size:24rpx;
+
+}
+.hideInfo .work-info .work-box{
+  margin-bottom: 20rpx;
+  
+}
+.hideInfo .work-info .work-box::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.hideInfo .work-info .work-box .work-status{
+  width: 50%;
+  float: left;
+  margin-top: 20rpx;
+}
+.hideInfo .work-info .work-box .work-status label{
+  color: #6a707e;
+}
+.hideInfo .work-info .work-box .work-status text{
+  color: #8590a6;
+}
+.hideInfo .work-info .word-status.fRight{
+  float: right;
+}
+.progress-wrapper{
+  overflow: hidden;
+}
+.progress-wrapper .progress-item{
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.progress-wrapper .progress-item::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+
+.progress-wrapper .progress-item label{
+  width: 26%;
+  float: left;
+
+}
+
+.progress-wrapper .progress-item .progress-empty{
+  width: 58%;
+  overflow: hidden;
+  float: left;
+  padding: 17rpx 0;
+}
+.progress-wrapper .progress-item text{
+  float: right;
+}
+
+.do-list{
+  width: 100%;
+  padding-bottom: 70rpx;
+}
+
+.do-list .list-item{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.do-list .list-item .do-item{
+  margin-left: 10rpx;
+  margin-top: 70rpx;
+  width: 168rpx;
+  
+}
+
+.do-list .list-item .do-item .do-img{
+  width: 100rpx;
+  height: 90rpx;
+  margin: 0 auto;
+}.do-list .list-item .do-item .do-img .do-avatar{
+  width: 80rpx;
+  height: 80rpx;
+}
+.do-list .list-item .do-item .do-name{
+  text-align: center;
+  color: #8590a6;
+}
+/* 饮料打杯 */
+.drinks-mask{
+  z-index: 100000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: .2s;
+  visibility: hidden;
+}
+.drinks-mask.showMask{
+  visibility: visible;
+  opacity: .7;
+
+}
+.drinks-wrapper{
+  z-index: 100000;
+  position: fixed;
+  top: 32%;
+  left: 8%;
+  width: 82%;
+  height: 350rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+}
+.drinks-wrapper.showDrinks{
+  visibility: visible;
+  opacity: 1;
+  top: 36%;
+}
+.drinks-wrapper .opt-name{
+  position: absolute;
+  left: 8%;
+  top: -12%;
+  height: 60rpx;
+  padding: 18rpx 30rpx 0 ;
+  background: #fff;
+  color: rgb(5, 211, 56);
+  border: 1px solid rgb(5, 211, 56);
+  border-radius: 8rpx;
+}
+
+.drinks-wrapper .opt-content{
+  background: #fff;
+  box-sizing: border-box;
+  padding: 78rpx 40rpx 18rpx; 
+  border-radius: 8rpx;
+}
+.drinks-wrapper .opt-content .opt-list{
+  display: flex;
+  justify-content: space-between;
+}
+.opt-content .opt-list .opt-item{
+  text-align: center;
+}
+.opt-content .opt-list .opt-item .opt-bei{
+  width: 132rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.opt-content .opt-list .opt-item .opt-bei .opt-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+.opt-content .opt-list .opt-item .opt-opt{
+  font-size: 28rpx;
+  text-align: center;
+}
+.opt-content .opt-list .opt-item .opt-opt.opt-selected{
+  color: rgb(5, 211, 56);
+}
+.opt-content .opt-go{
+  width: 52%;
+  height: 68rpx;
+  text-align: center;
+  line-height: 68rpx;
+  color: rgb(5, 211, 56);
+  border: 1px solid rgb(5, 211, 56);
+  margin: 40rpx auto;
+  border-radius: 8rpx;
+  padding: 0rpx 20% 0;
+  overflow: hidden;
+}
+.opt-content .opt-go .move-box{
+  overflow: hidden;
+  transition: .3s;
+}
+
+
+
+.opt-content .opt-go .move-box .initStatus{
+  transition: .6s
+}
+.opt-content .opt-go .move-box .initStatus.move-status{
+  margin-left: -92%;
+  color: rgb(5, 211, 56);
+}
+
+
+
+
+
+/* 温度设置 */
+.wendu-mask{
+  z-index: 100000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: .2s;
+  visibility: hidden;
+}
+.wendu-mask.showMask{
+  visibility: visible;
+  opacity: .7;
+}
+.wendu-wrapper{
+  z-index: 100000;
+  position: fixed;
+  top: 13%;
+  left: 8%;
+  width: 82%;
+  padding-bottom: 20rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+}
+.wendu-wrapper.showWenDu{
+  visibility: visible;
+  opacity: 1;
+  top: 20%;
+}
+.wendu-wrapper .opt-name{
+  position: absolute;
+  left: 8%;
+  top: -7%;
+  height: 60rpx;
+  padding: 18rpx 30rpx 0 ;
+  background: #fff;
+  color: rgb(5, 211, 56);
+  border: 1px solid rgb(5, 211, 56);
+  border-radius: 8rpx;
+}
+
+.wendu-wrapper .opt-content{
+  background: #fff;
+  box-sizing: border-box;
+  padding: 78rpx 40rpx 18rpx; 
+  border-radius: 8rpx;
+}
+.wendu-wrapper .opt-content .opt-list{
+  display: flex;
+  justify-content: space-between;
+}
+.opt-content .opt-list .opt-item{
+  text-align: center;
+}
+.opt-content .opt-list .opt-item .opt-avatar{
+  width: 160rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.opt-content .opt-list .opt-item .opt-avatar .opt-icon{
+  width: 70rpx;
+  height: 80rpx;
+}
+.opt-content .opt-list .opt-item .opt-avatar .wendu{
+  font-size: 40rpx;
+  line-height: 90rpx
+}
+.opt-content .opt-list .opt-item .opt-opt{
+  font-size: 28rpx;
+  text-align: center;
+}
+/* .opt-content .opt-list .opt-item .opt-opt.wenduActive{
+  color: rgb(5, 211, 56)
+} */
+
+
+.opt-content .opt-list .opt-item .opt-opt.opt-selected{
+  color: rgb(5, 211, 56);
+}
+
+.opt-content .opt-list .opt-item .opt-opt.mode-seleted{
+  color: #1296db;
+}
+
+/* 选项卡 */
+.wendu-wrapper .cart-wrapper{
+  width: 100%;
+  /* height: 280rpx; */
+  margin-top: 40rpx;
+}
+.wendu-wrapper::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.wendu-wrapper .cart-wrapper .tab-list::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.wendu-wrapper .cart-wrapper .tab-list .select-tab{
+  float: left;
+}
+.wendu-wrapper .cart-wrapper .select-tab text{
+  box-sizing: border-box;
+  padding: 16rpx 20rpx;
+  background: #D5DEEB;
+  display: block;
+  font-size: 28rpx; 
+  background-image: linear-gradient(90deg, transparent 70%, rgba(255, 255, 255, 0.5) 100%);
+}
+.wendu-wrapper .cart-wrapper .select-tab .selected{
+  background: rgb(232, 248, 236);
+  color: rgb(6, 189, 52);
+  border-top: 2px solid rgb(130, 240, 158);
+}
+
+.cart-wrapper .change-box{
+  width: 100%;
+  /* height: 100rpx; */
+  background: rgb(232, 248, 236);
+  border-bottom: 2px solid rgb(130, 240, 158);
+}
+.cart-wrapper .change-box .box-empty{
+  padding: 60rpx 10rpx;
+  /* background: gray; */
+}
+.cart-wrapper .change-box .box-empty .slideNum{
+  display:block;
+  text-align:center;
+  font-size:36rpx;
+
+}
+.cart-wrapper .change-box .wenduSub{
+  margin-top: 29rpx
+}
+
+
+.cart-wrapper .change-box .slider-wrapper{
+  width: 72%;
+  /* height: 100rpx; */
+  display: inline-block;
+  /* background: red; */
+}
+
+
+
+/* 模式设置 */
+.mode-mask{
+  z-index: 100000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: .2s;
+  visibility: hidden;
+}
+.mode-mask.showMode{
+  visibility: visible;
+  opacity: .7;
+
+}
+.mode-wrapper{
+  z-index: 100000;
+  position: fixed;
+  top: 32%;
+  left: 8%;
+  width: 82%;
+  background: #fff;
+  border-radius: 8rpx;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  padding-bottom: 10rpx;
+}
+.mode-wrapper.showMode{
+  visibility: visible;
+  opacity: 1;
+  top: 36%;
+}
+.mode-wrapper .opt-name{
+  position: absolute;
+  left: 8%;
+  top: -12%;
+  height: 60rpx;
+  padding: 18rpx 30rpx 0 ;
+  background: #fff;
+  color: rgb(5, 211, 56);
+  border: 1px solid rgb(5, 211, 56);
+  border-radius: 8rpx;
+}
+
+.mode-wrapper .opt-content{
+  background: #fff;
+  box-sizing: border-box;
+  padding: 40rpx 40rpx 38rpx; 
+  border-radius: 8rpx;
+}
+.mode-wrapper .opt-content .opt-list{
+
+  width: 100%;
+  /* background: red */
+}
+.mode-wrapper .opt-content .opt-list .opt-item{
+  display: flex;
+  justify-content: center;
+  margin-top: 36rpx;
+  background: #d0d5e0;
+  border-radius: 8rpx;
+  
+}
+.opt-content .opt-list .opt-item .mode-opt{
+  display: block;
+  width: 50%;
+  padding:10rpx 0;
+  background: #d0d5e0;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.opt-content .opt-list .opt-item .mode-opt.active{
+  
+  background: rgb(5, 211, 56)
+}
+.opt-content .opt-list .opt-item .opt-img{
+  width: 160rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.opt-content .opt-list .opt-item .opt-opt{
+  font-size: 28rpx;
+  text-align: center;
+}
+.opt-content .opt-list .opt-item .opt-opt.opt-selected{
+  color: rgb(5, 211, 56);
+}
+
+
+/* 水位设置 */
+.water-mask{
+  z-index: 100000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  transition: .2s;
+  visibility: hidden;
+}
+.water-mask.showWater{
+  visibility: visible;
+  opacity: .7;
+
+}
+.water-wrapper{
+  z-index: 100000;
+  position: fixed;
+  top: 16%;
+  left: 8%;
+  width: 82%;
+  background: #fff;
+  border-radius: 8rpx;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  padding-bottom: 40rpx;
+}
+.water-wrapper.showWater{
+  visibility: visible;
+  opacity: 1;
+  top: 20%;
+}
+.water-wrapper .opt-name{
+  position: absolute;
+  left: 8%;
+  top: -6%;
+  height: 60rpx;
+  padding: 18rpx 30rpx 0 ;
+  background: #fff;
+  color: rgb(5, 211, 56);
+  border: 1px solid rgb(5, 211, 56);
+  border-radius: 8rpx;
+}
+
+.water-wrapper .opt-content{
+  background: #fff;
+  box-sizing: border-box;
+  padding: 78rpx 40rpx 18rpx; 
+  border-radius: 8rpx;
+}
+.water-wrapper .opt-content .opt-list{
+  
+}
+.water-wrapper .opt-content .opt-list .opt-item{
+    padding: 16rpx 0;
+}
+
+.water-wrapper .opt-content .opt-list .opt-item .opt-lable{
+    float: left;
+}
+.water-wrapper .opt-content .opt-list .opt-item .lable-input{
+    border: 1px solid #8590a6;
+    display: inline-block;
+    width: 20%; 
+    border-radius: 8rpx;
+}
+.water-wrapper .opt-content .sure-btn{
+    float: right;
+    width: 20%;
+    padding: 10rpx 20rpx;
+    background: rgb(21, 202, 66);
+    color: #fff;
+    text-align: center;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+}

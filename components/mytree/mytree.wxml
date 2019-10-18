@@ -1,0 +1,14 @@
+<view class="ul">
+  <view class="li-item" >
+    <text>{{model.zoneName}}</text>
+    <!-- <image src="../../public/img/mytree/shangLa.png" class="menu-img" wx:if='{{ isBranch }}' ></image> -->
+    <image catchtap='{{isBranch?"toggle":"tapItem"}}' data-itemid='{{ model.zoneId }}' src="../../public/img/mytree/{{open?'shangLa':'xiaLa'}}.png" class="menu-img" wx:if='{{ isBranch }}' ></image>
+  </view>
+  <view style='padding-left: 50rpx;' wx:if='{{ isBranch }}' hidden='{{ !open }}'>
+    <mytree bind:myevent='childevent' wx:for='{{ model.childMenus }}' data-item="{{item}}" wx:key='zoneId' model='{{ item }}' catchtap="setText"></mytree>
+  </view>
+</view>
+
+
+
+

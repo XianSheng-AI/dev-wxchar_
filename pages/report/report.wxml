@@ -1,0 +1,9 @@
+<!--pages/report/report.wxml-->
+<!-- <text>pages/report/report.wxml</text> -->
+<view class='report-wrapper'>
+  <!-- <canvas canvas-id="lineCanvas"></canvas> -->
+  <!-- <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas> -->
+
+<canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+</view>

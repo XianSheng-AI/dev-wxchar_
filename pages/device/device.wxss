@@ -1,0 +1,72 @@
+/* pages/device/device.wxss */
+image{
+  width: 0;
+  height: 0;
+  display: block;
+  overflow: visible;
+}
+.bg_wrapper{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background: #aab6ce; */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#8590a6), to(#cfd7e9));
+  
+}
+.scroll-view{
+  width: 100%;
+  height: 200px;
+  white-space: nowrap;
+  background: #fff
+}
+.scroll-item{
+  /* box-sizing: border-box;
+  margin: 10px;
+  display: inline-block;
+  width: 74px;
+  height: 74px;
+  border-radius: 200px;
+  background: rgba(255,255,255,.5); */
+  width: 28%;
+  /* background: green */
+  /* float: left; */
+  display: inline-block;
+}
+.item-img{
+  box-sizing: border-box;
+  margin: 16px 16px 0;
+  display: inline-block;
+  width: 142rpx;
+  height: 136rpx;
+  border-radius: 200px;
+  background: rgba(255,255,255,.2);
+  text-align: center;
+}
+.item-img .device-avatar{
+  
+  display: inline-block;
+  width: 70rpx;
+  height: 136rpx;
+}
+.item-desc{
+  text-align: center;
+  color: #fff;
+  font-size: 22rpx
+}
+/* .bg_green{
+  background: green
+}
+.bg_gray{
+  background: gray
+}
+.bg_pink{
+  background: pink
+}
+.bg_blue{
+  background: blue
+}
+.bg_yellow{
+  background: yellow
+} */

@@ -1,0 +1,58 @@
+/* pages/login/login.wxss */
+
+.appName{
+  font-weight: bolder;
+  color: #8590a6;
+  font-size: 50rpx;
+  text-align: center;
+  margin: 20% 0;
+}
+.input-wrapper{
+  display: block;
+  width: 70%;
+  height: 40%;
+  /* background: red; */
+  margin: 0 auto;
+}
+.input-wrapper::after{
+  content: '';
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+.login_btn{
+  width: 70%;
+  height: 80rpx;
+  background: #8590a6;
+  text-align: center;
+  color: #fff;
+  line-height: 80rpx;
+  margin: 138rpx auto;
+  border-radius: 10rpx;
+}
+
+/* 公共样式 */
+.input-item{
+  display: block;
+  padding: 30rpx 0;
+  overflow: hidden;
+  border-bottom: 1px solid #8590a6;
+  margin-top:50rpx;
+}
+.input-item .img_icon{
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    float: left;
+    /* background: #584 */
+}
+.input-item .info_input{
+    display: block;
+    float: left;
+    width: 60%;
+    height: 50rpx;
+    /* background: red; */
+    margin-left: 60rpx;
+    text-align: center;
+    color: #8590a6;
+}

@@ -1,0 +1,24 @@
+<!--pages/device/device.wxml-->
+<view class='bg_wrapper'></view>
+<scroll-view class='scroll-view' scroll-x="{{true}}">
+  <!-- <view class='scroll-item bg_red' bind:tap="showDevice" data-code='{{item.typeCode}}' wx:for="{{deviceList}}"> -->
+  <view class='scroll-item bg_red' bind:tap="showDevice">
+    <view class='item-img'>
+      <image class='device-avatar' mode='aspectFill' src='../../public/img/device/GJJ.png'></image>
+    </view>
+    <view class='item-desc'>果酱机</view>
+  </view>
+  <!-- <view class='scroll-item bg_red'>
+    <view class='item-img'></view>
+    <view class='item-desc'>榨汁机</view>
+  </view>
+  <view class='scroll-item bg_red'>
+    <view class='item-img'></view>
+    <view class='item-desc'>空调</view>
+  </view> -->
+  <!-- <view class='scroll-item bg_green'></view>
+  <view class='scroll-item bg_gray'></view>
+  <view class='scroll-item bg_pink'></view>
+  <view class='scroll-item bg_blue'></view>
+  <view class='scroll-item bg_yellow'></view> -->
+</scroll-view>

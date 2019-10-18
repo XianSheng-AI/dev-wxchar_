@@ -1,0 +1,101 @@
+<view class="img_box">
+  <!-- <image class="map" enable-scroll="true" enable-zoom="true" src="{{src}}"></image>  -->
+  <view class='serach_wrapper'>
+    <button class='open_search' bind:tap="openSearch">打开搜索</button>
+    <view class='status_list' wx:for="{{statusInfo}}">
+      <view class="status_bg {{'bg_'+index}}"></view>{{item.status}},{{item.onlineNum}}台,{{item.statusPercentage}}
+    </view>
+  </view>
+
+ <!-- <map wx:if="{{initBool}}" id="map" scale="5" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" style="width: 100%; height: 100%;">
+ </map> -->
+
+ <view class="map_container"> 
+  <map class="map" wx:if="{{initBool}}" id="map"  data-scale='scale'  include-points="{{markers}}"  markers="{{markers}}" bindmarkertap="makertap"  bindregionchange="zoomEnd" bindcontroltap="controltap" controls="{{controls}}"></map> 
+</view> 
+</view>
+<view class='mask {{showBool?"show-mask":"false"}}' bind:tap="hideSearch"></view>
+<view class='hide-box {{showBool?"show-box":"false"}}'>
+  <view class='hide-list'>
+    <view class='lable'>设备编号</view>
+    <input class='opt-inp' bindinput='deviceNoM'></input>
+  </view>
+  <view class='hide-list'>
+    <view class='lable'>设备名称</view>
+    <input class='opt-inp' bindinput='deviceNameM'></input>
+  </view>
+  <view class='hide-list posi'>
+    <view class='lable'>区域</view>
+    
+    <view class='opt-inp' bindtap="showPick">
+      <view class='treeShow'>
+        {{areaVal}}
+      </view>
+    </view>
+  </view>
+ <view class='hide-list'>
+    <view class='lable'>厂家</view>
+
+    <input class='opt-inp' bindinput='manufactorM'></input>
+
+    <!-- <view class='opt-inp'>
+      <Select prop-array='{{selectArray2}}'></Select>
+    </view> -->
+  </view>
+  <view class='hide-list'>
+    <view class='lable'>设备型号</view>
+
+    <input class='opt-inp' bindinput='deviceModelM'></input>
+
+    <!-- <view class='opt-inp'>
+      <Select prop-array='{{selectArray3}}'></Select>
+    </view> -->
+  </view>
+  <view class='hide-list'>
+    <view class='lable'>联网状态</view>
+    <view class='opt-inp'>
+      <Select prop-array='{{selectArray4}}'></Select>
+    </view>
+  </view>
+  <view class='hide-list'>
+    <view class='lable'>工作状态</view>
+    <view class='opt-inp'>
+      <Select prop-array='{{selectArray5}}'></Select>
+    </view>
+  </view>
+  <view class='submit' bindtap='searchMarkes'>
+    立即搜索
+  </view>
+  <!-- <Select prop-array='{{selectArray6}}'></Select> -->
+</view>
+<view class="picker-mask" wx:if="{{pickBool}}"></view>
+<view class="picker-wrapper" wx:if="{{pickBool}}">
+  <view class="btn-pick" bindtap="doBtn" data-btn="can">取消</view>
+  <view class="btn-pick" bindtap="doBtn" data-btn="sure">确定</view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{areaRole[0]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[1]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[2]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[3]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[4]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[5]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areaRole[6]}}" style="line-height: 50px">{{item.zoneName}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+    
+  

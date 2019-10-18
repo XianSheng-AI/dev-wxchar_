@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class='line-report'> -->
+    <view class='total-title'>
+      <view class='total-list'>
+
+        <view class='total-item'>
+          <view class='total-desc'>总量{{allTotal}}L</view>
+        </view>
+        <view class='total-item'>
+          <view class='total-desc'>果酱机{{jamTotal}}L</view>
+        </view>
+        <view class='total-item'>
+          <view class='total-desc'>咖啡机{{cofeeTotal}}L</view>
+        </view>
+
+      </view>
+    </view>
+    <view class='show-style'>
+      <view class='show-list'>
+        <view class='show-item' data-style='line' catchtap='showStyle'>
+          <image class='item-img' src='../../public/img/report/ic_report.png'></image>
+        </view>
+        <view class='show-item' data-style='bar' catchtap='showStyle'>
+          <image class='item-img' src='../../public/img/report/ic_bar_chart.png'></image>
+        </view>
+        <view class='show-item' data-style='refresh' catchtap='showStyle'>
+          <image class='item-img' src='../../public/img/report/ic_refresh.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='do-list'>
+      <view class='do-item {{activeNumList.timeNum==0?"active":""}}' bindtap='showData' data-time='week'>最近一周</view>
+      <view class='do-item {{activeNumList.timeNum==1?"active":""}}' bindtap='showData' data-time='month'>最近一月</view>
+      <view class='do-item {{activeNumList.timeNum==2?"active":""}}' bindtap='showData' data-time='month3'>最近三月</view>
+      <view class='do-item {{activeNumList.timeNum=="3"?"active":""}}' bindtap='showData' data-time='year'>最近半年</view>
+    </view>
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  <!-- </view> -->
+    <view class='report-desc'>业务总览图</view>
+</view>
+
+<!-- <view wx:if="{{allTotald}}"> -->
+  <view class="container pie" >
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ pie }}" bind:init="echartInit"></ec-canvas>
+    <view class='report-desc'>设备联网状态</view>
+  </view>
+  <view class="container pie">
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ pie2 }}" bind:init="echartInit2"></ec-canvas>
+    <view class='report-desc'>设备工作状态</view>
+  </view>
+<!-- </view> -->
+
+
+
+
+

@@ -1,0 +1,365 @@
+<!-- 点击标记点 -->
+<scroll-view scroll-y style="height: 1220rpx;" class='markInfo showMarkInfo'>
+  <view class='hideInfo showHideInfo'>
+<view class='device-info'>
+  <view class='info-item'>
+    <label>设备类型：</label>
+    <text>{{deviceDetail.deviceTypeCode}}</text>
+  </view>
+  <view class='info-item'>
+    <label>设备编号：</label>
+    <text>{{deviceDetail.deviceNo}}</text>
+  </view>
+  <view class='info-item'>
+    <label>设备名称：</label>
+    <text>{{deviceDetail.deviceName}}</text>
+  </view>
+  <view class='info-item'>
+    <label>人员：</label>
+    <text>{{deviceDetail.appName}}</text>
+  </view>
+  <view class='info-item long'>
+    <label>录入位置：</label>
+    <text>{{deviceDetail.acquiescePosition}}</text>
+  </view>
+  <view class='info-item long'>
+    <label>实际位置：</label>
+    <text>{{deviceDetail.practicalPosition}}</text>
+  </view>
+   <view class='info-item'>
+    <label>部门：</label>
+    <text>{{deviceDetail.deptName}}</text>
+  </view>
+  <view class='info-item'>
+    <label>区域：</label>
+    <text>{{deviceDetail.zoneName}}</text>
+  </view>
+  <view class='info-item'>
+    <label>联网状态：</label>
+    <text>{{deviceDetail.deviceStatus=='404'?'离线':'在线'}}</text>
+  </view>
+  <view class='info-item'>
+    <label>工作状态：</label>
+    <text>{{deviceDetail.workStatus=='104'?'正常':'故障'}}</text>
+  </view>
+  <view class='info-item'>
+    <label>厂家：</label>
+    <text>{{deviceDetail.manufactor==null?'':deviceDetail.manufactor}}</text>
+  </view>
+  <view class='info-item'>
+    <label>型号：</label>
+    <text>{{deviceDetail.deviceModel==null?'':deviceDetail.deviceModel}}</text>
+  </view>
+  <view class='info-item long'>
+    <label>首次入网时间：</label>
+    <text>{{deviceDetail.firstInNet==null?'':deviceDetail.firstInNet}}</text>
+  </view>
+  <view class='info-item long'>
+    <label>有效期至：</label>
+    <text>{{deviceDetail.enableTime}}</text>
+  </view>
+  </view>
+  <view class='work-info'>
+    <view class='work-box'>
+      <view class='work-status'>
+        <label>工作模式：</label>
+        <text>{{argData.workModel=='0'?'桶装水':'直饮水'}}</text>
+      </view>
+      <view class='work-status fRight'>
+        <label>工作状态：</label>
+        <text>{{argStatus.workStatus}}</text>
+      </view>
+      <view class='work-status'>
+        <label>水箱水位：</label>
+        <text>{{!!argData.waterBoxLevel?argData.waterBoxLevel:''}}</text>
+      </view>
+      <view class='work-status'>
+        <label>原料箱温度：</label>
+        <text>{{argData.rawBoxTem}}</text>
+      </view>
+    </view>
+
+    <view class='progress-wrapper'>
+      <view class='progress-item'>
+        <label>黑加仑：</label>
+        <view class='progress-empty'>
+          <progress percent="{{argData.blackCurrant}}" color="gray" />
+        </view>
+        <text>130ML</text>
+      </view>
+      <view class='progress-item'>
+        <label>草番：</label>
+        <view class='progress-empty'>
+          <progress percent="{{argData.caoFan}}" color="green" />
+        </view>
+        <text>150ML</text>
+      </view>
+      <view class='progress-item'>
+        <label>西柚：</label>
+        <view class='progress-empty'>
+          <progress percent="{{argData.grapefruit}}" color="red" />
+        </view>
+        <text>200ML</text>
+      </view>
+      <view class='progress-item'>
+        <label>橙桃：</label>
+        <view class='progress-empty'>
+          <progress percent="{{argData.orangePeach}}" color="yellow" />
+        </view>
+        <text>170ML</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='do-list'>
+      <view class='list-item'>
+
+        <!-- <view class='do-item' bind:tap='showDaBei' wx:if="{{modeList.dabei}}"> -->
+        <view class='do-item' bind:tap='showDaBei'>
+          <view class='do-img'>
+            <image class='do-avatar' src='../../public/img/map/ic_cup.png'></image>
+          </view>
+          <text class='do-name'>饮料打杯</text>
+        </view>
+        <!-- <view class='do-item' bind:tap='showWenDu' wx:if="{{modeList.dabei}}"> -->
+        <view class='do-item' bind:tap='showWenDu'>
+          <view class='do-img'>
+            <image class='do-avatar' src='../../public/img/map/ic_temperature_set.png' ></image>
+          </view>
+          <text class='do-name'>温度设置</text>
+        </view>
+        <!-- <view class='do-item' bind:tap='showWater' wx:if="{{modeList.wendu}}"> -->
+        <view class='do-item' bind:tap='showWater' >
+          <view class='do-img'>
+            <image class='do-avatar' src='../../public/img/map/ic_water_level.png' ></image>
+          </view>
+          <text class='do-name'>水位设置</text>
+        </view>
+        <!-- <view class='do-item' bind:tap='showMode' wx:if="{{modeList.shuiwei}}"> -->
+        <view class='do-item' bind:tap='showMode'>
+          <view class='do-img'>
+            <image class='do-avatar' src='../../public/img/map/ic_model_set.png' ></image>
+          </view>
+          <text class='do-name'>模式设置</text>
+        </view>
+        <!-- <view class='do-item' bindtap='lockDevice' wx:if="{{modeList.lock}}"> -->
+        <view class='do-item' bindtap='lockDevice' >
+          <view class='do-img'>
+            <image class='do-avatar' src='../../public/img/map/ic_lock{{lockDeviceBool?"_open":""}}.png'></image>
+          </view>
+          <text class='do-name' wx:if="{{lockDeviceBool}}">锁定设备</text>
+          <text class='do-name' wx:if="{{!lockDeviceBool}}">解锁设备</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+</scroll-view>
+<!-- 饮料打杯 -->
+<view class='drinks-mask {{showDrinksBool?"showMask":""}}' bind:tap='showDaBei'></view>
+<view class='drinks-wrapper {{showDrinksBool?"showDrinks":""}}'>
+  <text class='opt-name'>饮料打杯</text>
+  <view class='opt-content'>
+    <view class='opt-list'>
+
+      <view class='opt-item' bindtap='daBeiM' data-dabei='0'>
+        <view class='opt-bei'>
+          <image class='opt-icon' src='../../public/img/map/drinks{{drinksIndex==0?"_go":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{drinksIndex==0?"opt-selected":""}}'>1号杯位</text>
+      </view>
+      <view class='opt-item' bindtap='daBeiM' data-dabei='1'>
+        <view class='opt-bei'>
+          <image class='opt-icon' src='../../public/img/map/drinks{{drinksIndex==1?"_go":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{drinksIndex==1?"opt-selected":""}}'>2号杯位</text>
+      </view>
+      <view class='opt-item' bindtap='daBeiM' data-dabei='2'>
+        <view class='opt-bei'>
+          <image class='opt-icon' src='../../public/img/map/drinks{{drinksIndex==2?"_go":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{drinksIndex==2?"opt-selected":""}}'>3号杯位</text>
+      </view>
+      <view class='opt-item' bindtap='daBeiM' data-dabei='3'>
+        <view class='opt-bei'>
+          <image class='opt-icon' src='../../public/img/map/drinks{{drinksIndex==3?"_go":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{drinksIndex==3?"opt-selected":""}}'>4号杯位</text>
+      </view>
+    </view>
+    <view class='opt-go' bindtap='startGroupUp'>
+      <view class='move-box' bindtap='startDaBei'>
+        <text wx:if='{{dabeiNum<7?false:true}}'>{{dabeiNum==100?'请打杯':dabeiNum+'号杯位 正在取消打杯'}}</text>
+        <text wx:if='{{dabeiNum>7?false:true}}'> {{dabeiNum==100?'':dabeiNum}}号杯位 正在出杯</text>
+        <!-- <text wx:if='{{dabeiNum>7?false:true}}'> {{dabeiNum==100?'':dabeiNum}}号杯位 正在出杯</text> -->
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 温度设置 -->
+<view class='wendu-mask {{showWenDuBool?"showMask":""}}' bind:tap='showWenDu'></view>
+<view class='wendu-wrapper {{showWenDuBool?"showWenDu":""}}'>
+  <text class='opt-name'>温度设置</text>
+  <view class='opt-content'>
+    <view class='opt-list'>
+
+      <!-- <view class='opt-item' bindtap='wenduM' data-wendu='0'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/wendu{{wenduIndex==0?"_selected":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{wenduIndex==0?"opt-selected":false}}'>水箱温度</text>
+      </view>
+      <view class='opt-item' bindtap='wenduM' data-wendu='1'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/ic_raw_materia{{wenduIndex==1?"_selected":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{wenduIndex==1?"opt-selected":false}}'>原料箱温度</text>
+      </view>
+      <view class='opt-item' bindtap='wenduM' data-wendu='2'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/ic_compressor{{wenduIndex==2?"_selected":""}}.png'></image>
+        </view>
+        <text class='opt-opt {{wenduIndex==2?"opt-selected":false}}'>压缩机温度</text>
+      </view> -->
+      <view class='opt-item' bindtap='wenduM' data-wendu='0'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/wendu.png'></image>
+          <text class='wendu'>{{argData.waterBoxTem}}℃</text>
+        </view>
+        <text class='opt-opt'>水箱温度</text>
+      </view>
+      <view class='opt-item' bindtap='wenduM' data-wendu='1'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/ic_raw_materia.png'></image>
+          <text class='wendu'>{{argData.rawBoxTem}}℃</text>
+        </view>
+        <text class='opt-opt'>原料箱温度</text>
+      </view>
+      <view class='opt-item' bindtap='wenduM' data-wendu='2'>
+        <view class='opt-avatar'>
+          <image class='opt-icon' src='../../public/img/map/ic_compressor.png'></image>
+          <text class='wendu'>{{argData.compressorTem}}℃</text>
+        </view>
+        <text class='opt-opt'>压缩机温度</text>
+      </view>
+     
+    </view>
+    <!-- 选项卡内容 -->
+    <view class='cart-wrapper'>
+      <view class='tab-list'>
+        <view 
+        wx:for="{{temperatureTab}}"
+        data-index='{{index}}'
+        class='select-tab' 
+        bind:tap='selectedTab'
+        >
+          <text class='{{temperatureTabIndex==index?"selected":""}}' >{{item.value}}</text>
+        </view>
+      </view>
+      <!-- 切换内容 -->
+      <view class='change-box'>
+        <view class='box-empty' wx:if="{{temperatureTabIndex==0}}">
+          <view>
+            <text>20℃</text>
+            <view class='slider-wrapper'>
+              <slider bindchange="changeSlider1" value="{{slider1}}" min="20" max="60" activeColor='#1296db' />
+            </view>
+            <text>60℃</text>
+          </view>
+          <text class='slideNum'>{{slider1}}</text>
+        </view>
+
+        <view class='box-empty' wx:if="{{temperatureTabIndex==1}}">
+          <view>
+            <text>3℃</text>
+            <view class='slider-wrapper'>
+              <slider bindchange="changeSlider2" value="{{slider2}}" min="3" max="20" activeColor='#1296db' />
+            </view>
+            <text>20℃</text>
+          </view>
+          <text class='slideNum'>{{slider2}}</text>
+        </view>
+
+        <view class='box-empty' wx:if="{{temperatureTabIndex==2}}">
+          <view>
+            <text>15℃</text>
+            <view class='slider-wrapper'>
+              <slider bindchange="changeSlider3" value="{{slider3}}" min="15" max="30" activeColor='#1296db' />
+            </view>
+            <text>30℃</text>
+          </view>
+          <text class='slideNum'>{{slider3}}</text>
+        </view>
+        <button class='wenduSub' bindtap='wenduSub' data-wendu='box'>设置</button>
+      </view>
+    </view>
+    
+  </view>
+</view>
+    
+<!-- 模式设置 -->
+<view class='mode-mask {{showModeBool?"showMode":""}}' bind:tap='showMode'></view>
+<view class='mode-wrapper {{showModeBool?"showMode":""}}'>
+  <text class='opt-name'>模式设置</text>
+  <view class='opt-content'>
+    <view class='opt-list'>
+      <view class='opt-item'>
+        <view class="mode-opt {{argData.temModel==0?'active':''}}" data-mode="hot" bindtap="changeMode">制热</view>
+        <view class="mode-opt {{argData.temModel==1?'active':''}}" data-mode="cool" bindtap="changeMode">制冷</view>
+      </view>
+      <view class='opt-item' bindtap='modeActive' data-index='1'>
+        <view class="mode-opt {{argData.waterModel==0?'active':''}}" data-mode="ton" catchtap="changeMode">桶装水</view>
+        <view class="mode-opt {{argData.waterModel==1?'active':''}}" data-mode="zhi" catchtap="changeMode">直饮水</view>
+      </view>
+      <view class='opt-item'>
+        <view class="mode-opt {{argData.workModel==0?'active':''}}" data-mode="net" catchtap="changeMode">物联网模式</view>
+        <view class="mode-opt {{argData.workModel==1?'active':''}}" data-mode="free" catchtap="changeMode">免费模式</view>
+      </view>
+
+    </view>
+    <!-- 选项卡内容 -->
+  </view>
+</view>
+<!-- 水位设置 -->
+<view class='water-mask {{showWaterBool?"showWater":""}}' bind:tap='showWater'></view>
+<view class='water-wrapper {{showWaterBool?"showWater":""}}'>
+  <text class='opt-name'>水位设置</text>
+  <view class='opt-content'>
+    <view class='opt-list'>
+      <view class='opt-item'>
+        <text class='opt-lable'>预冷水箱补水探针实际系数：</text>
+        <text class='lable-value'>{{argData.perCoolAct}}</text>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>预冷水箱补水探针实际系数：</text>
+        <input class='lable-input' bindinput='water1'></input>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>平衡水箱补水探针设定系数：</text>
+        <text class='lable-value'>{{argData.balanceAct}}</text>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>平衡水箱补水探针实际系数：</text>
+        <input class='lable-input' bindinput='water2'></input>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>平衡水箱停水探针实际系数：</text>
+        <text class='lable-value'>{{argData.balanceStopAct}}</text>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>平衡水箱停水探针设定系数：</text>
+        <input class='lable-input' bindinput='water3'></input>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>溢水位实际系数：</text>
+        <text class='lable-value'>{{argData.overflowAct}}</text>
+      </view>
+      <view class='opt-item'>
+        <text class='opt-lable'>溢水位设定系数：</text>
+        <input class='lable-input' bindinput='water4'></input>
+      </view>
+    </view>
+    <view class='sure-btn' bindtap='setSub'>设置</view>
+  </view>
+</view>

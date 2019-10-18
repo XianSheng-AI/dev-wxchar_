@@ -1,0 +1,36 @@
+
+<view class='about'>
+
+  <view class='mine'>我的</view>
+  <view class='list-wrapper'>
+    <view class='list-item' bind:tap='showFix'>
+      <image class='item-img' src='../../public/img/me/fix_password.png'></image>
+      <text class='item-val'>修改密码</text>
+      <view class='click-tip'>
+        <image class='tip-img' src='../../public/img/me/click_tip_.png'></image>
+      </view>
+    </view>
+    <view class='list-item' bind:tap="showAboutUs">
+      <image class='item-img' src='../../public/img/me/about.png'></image>
+      <text class='item-val'>关于我们</text>
+      <view class='click-tip'>
+        <image class='tip-img' src='../../public/img/me/click_tip_.png'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view bind:tap='showFix' class="fix-mask {{showFixBool?'showMask':''}}"></view>
+<view class='fix-password {{showFixBool?"showFix":""}}' >
+  <view class='fix-title'>修改密码</view>
+  <view class='input-wrapper'>
+    <input type='password' bindinput='oldPassword' placeholder='请输入旧密码'></input>
+    <input type='password' bindinput='newPassword' placeholder='输入新密码'></input>
+    <input type='password' bindinput='newPassword_' placeholder='确认新密码'></input>
+  </view>
+  <view class='btn-group'>
+    <view bind:tap='showFix'  class='btn_do'>取消</view>
+    <view class='btn_do' bind:tap='fixPassword'>确定</view>
+  </view>
+</view>

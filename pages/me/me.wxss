@@ -1,0 +1,138 @@
+/* pages/me/me.wxss */
+
+.about{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+.mine{
+  width: 100%;
+  padding: 40rpx 0;
+  background: #1296db;
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+}
+.list-wrapper{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.list-item{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 16rpx;
+}
+.list-item::after{
+  content: '';
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.list-item .item-img{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  float: left
+}
+.list-item .item-val{
+  line-height: 50rpx;
+  float: left;
+  margin-left: 2%
+}
+.list-item .click-tip{
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 6%;
+  /* background: red; */
+  float: right
+}
+.list-item .click-tip .tip-img{
+  width: 46rpx;
+  height: 46rpx;
+}
+.fix-mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .4);
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  visibility: hidden;
+  transition: .2s
+}
+.fix-mask.showMask{
+  visibility: visible;
+  opacity: .8
+}
+.fix-password{
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-left: -28%;
+  visibility: hidden;
+  transition: .3s;
+  opacity: 0;
+}
+.fix-password.showFix{
+  visibility: visible;
+  opacity: 1;
+  top: 27%;
+}
+
+
+.fix-password .fix-title{
+  background: #1296db;
+  text-align: center;
+  padding: 30rpx 0;
+  width: 100%; 
+  color: #fff;
+  font-size: 29rpx;
+
+}
+.fix-password .input-wrapper{
+  padding: 20rpx;
+}
+.fix-password input{
+  padding: 10rpx 20rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.fix-password .btn-group{
+  width: 80%;
+  height: 100rpx;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fix-password .btn-group .btn_do{
+  padding: 2rpx 40rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #1296db;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 28rpx
+}
+.fix-password .btn-group .btn_do:first-child{
+  background: #fff;
+  border: 1px solid #38b5f8;
+  color: #1296db;
+}
+
+
+
+
+
+
+
+
